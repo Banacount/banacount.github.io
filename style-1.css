@@ -73,6 +73,7 @@ p {
     text-align: center;
     aspect-ratio: 1/1;
     background-color: var(--color-bg);
+    cursor: pointer;
 }
 .page-ad {
     width: 80%;
@@ -99,6 +100,7 @@ p {
     width: 80%;
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
     padding: 1.5rem;
 }
 .smol-header {
@@ -115,7 +117,7 @@ p {
     width: 7rem;
     aspect-ratio: 1 / 1;
     border: 5px outset var(--color-fg);
-    background-color: red;
+    background-color: transparent;
 }
 .square-image img {
     width: 100%;
@@ -128,4 +130,33 @@ p {
     height: 2px;
     border: 5px inset var(--color-bg);
     background-color: var(--color-fg);
+}
+
+.sentiment-1 {
+    font-size: 1.4rem;
+    border: 5px inset var(--color-fg);
+    padding: 1rem;
+}
+
+.window-page {
+    width: 80%;
+    border-top-width: 0px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.footer-end {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--color-fg);
+    background-color: var(--color-bg-window);
+}
+
+
+/* ID's */
+#myProfile {
+    cursor: pointer;
 }

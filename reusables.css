@@ -8,8 +8,14 @@
 .w-5 {
     width: 5rem;
 }
+.mt-1 {
+    margin-top: 1rem;
+}
 .mt-2 {
     margin-top: 2rem;
+}
+.p-1 {
+    padding: 1rem;
 }
 .flex-row {
     display: flex;
