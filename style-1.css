@@ -35,6 +35,25 @@ p {
     margin: 0;
     margin-top: 0.4rem;
 }
+input {
+    font-family: 'tahoma';
+}
+button {
+    margin: 0;
+    padding: 0.1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    margin-left: auto;
+    margin-right: 0.4rem;
+    border: 2px outset var(--color-fg);
+    font-family: 'tahoma';
+    font-size: 0.6rem;
+    text-align: center;
+    aspect-ratio: 1/1;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    outline: none;
+}
 
 /* General elements */
 .pages {
@@ -60,20 +79,6 @@ p {
     margin: 0;
     margin-left: 0.3rem;
     font-size: 1.2rem;
-}
-.window-action button {
-    margin: 0;
-    padding: 0.1rem;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-    margin-left: auto;
-    margin-right: 0.4rem;
-    border: 2px outset var(--color-fg);
-    font-size: 0.6rem;
-    text-align: center;
-    aspect-ratio: 1/1;
-    background-color: var(--color-bg);
-    cursor: pointer;
 }
 .page-ad {
     width: 80%;
@@ -159,4 +164,29 @@ p {
 /* ID's */
 #myProfile {
     cursor: pointer;
+}
+
+.nav-contain {
+    width: 95%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#pageUrlInput {
+    width: 100%;
+    font-size: 1.2rem;
+    outline: none;
+    border: 5px groove var(--color-bg);
+    background-color: var(--color-fg);
+    box-sizing: border-box;
+}
+.nav-contain p {
+    margin-right: 0.2rem;
+}
+.nav-contain button {
+    font-size: 1.1rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }

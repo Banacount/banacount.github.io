@@ -8,14 +8,29 @@
 .w-5 {
     width: 5rem;
 }
+.w-100 {
+    width: 100%;
+}
 .mt-1 {
     margin-top: 1rem;
 }
 .mt-2 {
     margin-top: 2rem;
 }
+.f-1 {
+    font-size: 1rem;
+}
 .p-1 {
     padding: 1rem;
+}
+.p-05 {
+    padding: 0.5rem;
+}
+.g-1 {
+    gap: 1rem;
+}
+.g-05 {
+    gap: 0.5rem;
 }
 .flex-row {
     display: flex;
@@ -27,4 +42,7 @@
 }
 .border-1 {
     border: 5px outset var(--color-fg);
+}
+.bb {
+    box-sizing: border-box;
 }
