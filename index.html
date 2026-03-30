@@ -16,12 +16,16 @@
 <body>
     <div class="nav-contain">
         <p class="f-1">Location: </p>
-        <input type="text" id="pageUrlInput">
-        <button>></button>
+        <input type="text" id="pageUrlInput" autocomplete="off">
+        <button id="searchBtn">></button>
     </div>
-    <div id="pageView">
+    <p id="errorLogEl"></p>
+
+    <div id="pageView" class="pages">
     </div>
+
     <div class="footer-end mt-2">© 2026 [Johval/Banacount]. All rights reserved.</div>
 </body>
-<script src="./func.js"></script>
+<script src="./func.js" type="module"></script>
+<script src="./renderer.js" type="module"></script>
 </html>

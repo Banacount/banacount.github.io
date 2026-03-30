@@ -33,7 +33,12 @@ h2 {
 p {
     font-size: 1.7rem;
     margin: 0;
-    margin-top: 0.4rem;
+    margin-top: 0.1rem;
+}
+a {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 0.1rem;
 }
 input {
     font-family: 'tahoma';
@@ -160,12 +165,6 @@ button {
     background-color: var(--color-bg-window);
 }
 
-
-/* ID's */
-#myProfile {
-    cursor: pointer;
-}
-
 .nav-contain {
     width: 95%;
     margin-left: 1rem;
@@ -174,6 +173,19 @@ button {
     flex-direction: row;
     align-items: center;
 }
+
+
+/* ID's */
+#errorLogEl {
+    color: red;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+#myProfile {
+    cursor: pointer;
+}
+
 #pageUrlInput {
     width: 100%;
     font-size: 1.2rem;
