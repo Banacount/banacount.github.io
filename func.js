@@ -29,27 +29,27 @@ const loadHome = async () => {
         pageView.innerHTML = getContent
 
         // Refer to the element and start a controller
-        const myName = document.getElementById("myName");
         const event1 = new AbortController();
-
-        // Start the listener
-        document.getElementById("myProfile").addEventListener('click', () => {
-            isBana = !isBana;
-            if (isBana) myName.innerHTML = "Banacount";
-            else myName.innerHTML = "Johval";
-        }, { 'signal': event1.signal });
-        // Push the controller on the array so we could get rid of it later
-        eventListeners.push(event1);
     } catch (error) {
         pageView.innerHTML = `<p>${error}</p>`;
     }
 }
 
+// General purpose functions
 function removeWinElement(element) {
     element.parentElement.parentElement.remove();
     console.log("Closed the window.");
 }
+function dumbAhhProfile() {
+    const myName = document.getElementById("myName");
+    isBana = !isBana;
+    if (isBana) myName.innerHTML = "Banacount";
+    else myName.innerHTML = "Johval";
+}
+
+// Making the function global 
 window.removeWinElement = removeWinElement;
+window.dumbAhhProfile = dumbAhhProfile;
 
 loadHome();
 searchBtn.addEventListener('click', () => {
@@ -61,6 +61,7 @@ searchBtn.addEventListener('click', () => {
         } else logError(`Cannot access ${urlInput.value} page`);
     });
 })
+
 /*
 testing: if the event listener list works
 document.addEventListener('keydown', (e) => {
@@ -71,3 +72,4 @@ document.addEventListener('keydown', (e) => {
     }
 });
 */
+urlInput.value = "home";
