@@ -5,6 +5,7 @@ let eventListeners = []
 
 // General Variables
 let isBana = false;
+let lastLocation = "home";
 const pageView = document.getElementById("pageView");
 const searchBtn = document.getElementById("searchBtn");
 const urlInput = document.getElementById("pageUrlInput");
@@ -19,6 +20,24 @@ const unloadListeners = () => {
     eventListeners.map((con) => { con.abort() });
     eventListeners = [];
 };
+// Literally just goes to a url
+const urlGoerFromInput = () => {
+    if (lastLocation == urlInput.value) {
+        console.log("Fake ahh ngga")
+        return;  
+    }
+
+    unloadListeners();
+    loadTemp(`./${urlInput.value}.html`, (data) => {
+        if (data != 1) {
+            pageView.innerHTML = data;
+            logError("");
+        } else logError(`Cannot access ${urlInput.value} page`);
+
+        lastLocation = urlInput.value;
+    });
+};
+
 // Load home
 const loadHome = async () => {
     try {
@@ -53,14 +72,15 @@ window.dumbAhhProfile = dumbAhhProfile;
 
 loadHome();
 searchBtn.addEventListener('click', () => {
-    unloadListeners();
-    loadTemp(`./${urlInput.value}.html`, (data) => {
-        if (data != 1) {
-            pageView.innerHTML = data;
-            logError("");
-        } else logError(`Cannot access ${urlInput.value} page`);
-    });
+    urlGoerFromInput();
 })
+
+urlInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        urlGoerFromInput();
+        urlInput.blur();
+    }
+});
 
 /*
 testing: if the event listener list works
