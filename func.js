@@ -61,9 +61,15 @@ function removeWinElement(element) {
 }
 function dumbAhhProfile() {
     const myName = document.getElementById("myName");
+    const profileImg = document.getElementById("profileImg");
     isBana = !isBana;
-    if (isBana) myName.innerHTML = "Banacount";
-    else myName.innerHTML = "Johval";
+    if (isBana) {
+        myName.innerHTML = "Banacount";
+        profileImg.src = './ass/profile.png';
+    } else {
+        myName.innerHTML = "Johval";
+        profileImg.src = './ass/me.jpg';
+    }
 }
 
 // Making the function global 

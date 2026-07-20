@@ -19,8 +19,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-bg);
-    cursor: url('./ass/cur.png') 10 10, auto;
 }
+/*cursor: url('./ass/cur.png') 10 10, auto;*/
 
 h1, h2 {
     margin: 0;
@@ -147,6 +147,10 @@ button {
     border: 5px inset var(--color-fg);
     padding: 1rem;
 }
+.sentiment-0 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
 
 .window-page {
     width: 80%;
@@ -172,6 +176,33 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.in-text-action {
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.in-text-action .desc {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    border: 5px outset var(--color-fg);
+    padding: 0.5rem;
+    color: var(--color-fg);
+    background-color: var(--color-bg-window);
+}
+.in-text-action .desc .title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    text-decoration: yellow underline;
+}
+.in-text-action .desc .text {
+    font-size: 1.2rem;
+}
+.in-text-action:hover .desc {
+    display: inline-block;
 }
 
 
