@@ -205,6 +205,72 @@ button {
     display: inline-block;
 }
 
+.project-cards-contain {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    place-items: center;
+    gap: 2rem;
+}
+.project-card {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-fg);
+    border: 10px outset var(--color-fg);
+    user-select: none;
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: help;
+}
+.project-card:hover {
+    border-width: 0px;
+}
+.project-card .card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--color-bg-window);
+}
+.project-card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.project-card .card-title {
+    display: inline-block;
+    font-size: 1.8rem;
+}
+.project-card .card-desc {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+.project-card .card-details {
+    padding: 0.6rem;
+}
+.project-card .card-tags {
+    display: block;
+    margin-top: 0.5rem;
+}
+.project-card .card-tags p {
+    display: inline-block;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+    font-size: 1.3rem;
+    padding: 0.2rem;
+    background-color: yellow;
+}
+.project-card .proj-link {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 1rem;
+}
+.project-card .proj-link a {
+    font-size: 2rem;
+    color: green;
+}
+
 
 /* ID's */
 #errorLogEl {
@@ -225,6 +291,11 @@ button {
     background-color: var(--color-fg);
     box-sizing: border-box;
 }
+#pageView {
+    justify-self: center;
+    max-width: 1040px;
+}
+
 .nav-contain p {
     margin-right: 0.2rem;
 }
@@ -233,3 +304,4 @@ button {
     width: 1.5rem;
     height: 1.5rem;
 }
+

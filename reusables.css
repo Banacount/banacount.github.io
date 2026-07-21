@@ -11,6 +11,9 @@
 .w-100 {
     width: 100%;
 }
+.w-80 {
+    width: 80%;
+}
 .mt-1 {
     margin-top: 1rem;
 }
@@ -45,4 +48,10 @@
 }
 .bb {
     box-sizing: border-box;
+}
+.bg-red {
+    background-color: red;
+}
+.bg-yellow {
+    background-color: yellow;
 }

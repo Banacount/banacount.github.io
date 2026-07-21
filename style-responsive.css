@@ -1,3 +1,8 @@
+@media screen and (max-width: 1040px) {
+    .project-cards-contain {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
 
 @media screen and (max-width: 760px) {
     .page-container {
@@ -7,9 +12,15 @@
     }
     .part-2 {
         padding: 0;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     .smol-header {
         font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .project-cards-contain {
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
