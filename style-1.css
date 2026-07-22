@@ -177,6 +177,22 @@ button {
     flex-direction: row;
     align-items: center;
 }
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+    flex-direction: row;
+    justify-content: left;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+.navbar button {
+    height: 2rem;
+    margin: 0;
+    font-size: 1.4rem;
+}
 
 .in-text-action {
     display: inline-block;
@@ -271,10 +287,45 @@ button {
     color: green;
 }
 
+.socials-contain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.socials-contain .social {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    border: 0px solid var(--color-fg);
+    border-top-width: 4px;
+}
+.socials-contain .social a {
+    color: blue;
+    font-size: 2.8rem;
+    padding: 1rem;
+}
+.socials-contain .social .social-img {
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    margin-left: 1rem;
+    border: 2px solid blue;
+    background-color: var(--color-bg-window);
+    overflow: hidden;
+}
+.socials-contain .social .social-img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 /* ID's */
 #errorLogEl {
     color: red;
+    display: flex;
+    flex-direction: column;
     font-size: 1rem;
     margin-left: 1rem;
 }

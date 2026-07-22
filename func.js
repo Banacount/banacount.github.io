@@ -23,7 +23,7 @@ const unloadListeners = () => {
 // Literally just goes to a url
 const urlGoerFromInput = () => {
     if (lastLocation == urlInput.value) {
-        console.log("Fake ahh ngga")
+        console.log("Don't refetch man, without chaging the location input.")
         return;  
     }
 
@@ -41,7 +41,7 @@ const urlGoerFromInput = () => {
 // Load home
 const loadHome = async () => {
     try {
-        const getHome = await fetch('./home.html');
+        const getHome = await fetch('./pages/home.html');
         if (!getHome.ok) throw new Error("cannot get home.html content.");
 
         const getContent = await getHome.text();
@@ -71,10 +71,15 @@ function dumbAhhProfile() {
         profileImg.src = './ass/me.jpg';
     }
 }
+function gotoLocal(location) {
+    urlInput.value = location;
+    urlGoerFromInput();
+}
 
 // Making the function global 
 window.removeWinElement = removeWinElement;
 window.dumbAhhProfile = dumbAhhProfile;
+window.gotoLocal = gotoLocal;
 
 loadHome();
 searchBtn.addEventListener('click', () => {
