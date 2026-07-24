@@ -51,8 +51,8 @@ const urlGoerFromInput = () => {
         return;  
     }
 
-    loadTempText(urlInput.value);
     unloadListeners();
+    loadTempText(urlInput.value);
 };
 const urlGoerFromParam = async () => {
     const url = new URL(window.location.href);
@@ -68,14 +68,7 @@ const urlGoerFromParam = async () => {
         }
     } else {
         unloadListeners();
-        loadTemp("home.html", (data) => {
-            if (data != 1) {
-                pageView.innerHTML = data;
-                logError("");
-            } else logError(`No this shouldn't happen, you might wanna restart your device.`);
-
-            lastLocation = urlInput.value;
-        });
+        loadTempText("home");
     }
 
     return;
