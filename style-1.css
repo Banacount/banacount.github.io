@@ -184,8 +184,8 @@ button {
     gap: 0.3rem;
     margin-top: 0.5rem;
     flex-direction: row;
-    justify-content: left;
-    padding-left: 1rem;
+    justify-content: right;
+    padding-right: 1rem;
     box-sizing: border-box;
 }
 .navbar button {
@@ -229,6 +229,7 @@ button {
 }
 .project-card {
     width: 15rem;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     background-color: var(--color-fg);

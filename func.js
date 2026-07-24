@@ -15,6 +15,30 @@ const logError = (error_msg) => {
     const errorElement = document.getElementById("errorLogEl");
     errorElement.innerHTML = error_msg;
 };
+// Load the temp html files but shorter lmao
+const loadTempText = async (html_name_string) => {
+    let didError = false;
+
+    await loadTemp(html_name_string, (data) => {
+        if (data != 1) {
+            pageView.innerHTML = data;
+            logError("");
+        } else { 
+            logError(`Cannot access ${urlInput.value} page`);
+            didError = true;
+        }
+
+        lastLocation = html_name_string;
+        urlInput.value = html_name_string;
+
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', html_name_string);
+        window.history.pushState({}, '', url);
+    });
+
+    return didError;
+}
+
 // Unload the event listeners list
 const unloadListeners = () => {
     eventListeners.map((con) => { con.abort() });
@@ -27,32 +51,35 @@ const urlGoerFromInput = () => {
         return;  
     }
 
+    loadTempText(urlInput.value);
     unloadListeners();
-    loadTemp(`./${urlInput.value}.html`, (data) => {
-        if (data != 1) {
-            pageView.innerHTML = data;
-            logError("");
-        } else logError(`Cannot access ${urlInput.value} page`);
-
-        lastLocation = urlInput.value;
-    });
 };
+const urlGoerFromParam = async () => {
+    const url = new URL(window.location.href);
+    const page = url.searchParams.get('page');
 
-// Load home
-const loadHome = async () => {
-    try {
-        const getHome = await fetch('./pages/home.html');
-        if (!getHome.ok) throw new Error("cannot get home.html content.");
+    if (page) 
+    {
+        unloadListeners();
+        const didError = await loadTempText(page);
 
-        const getContent = await getHome.text();
-        pageView.innerHTML = getContent
+        if (didError) {
+            loadTempText("404");
+        }
+    } else {
+        unloadListeners();
+        loadTemp("home.html", (data) => {
+            if (data != 1) {
+                pageView.innerHTML = data;
+                logError("");
+            } else logError(`No this shouldn't happen, you might wanna restart your device.`);
 
-        // Refer to the element and start a controller
-        const event1 = new AbortController();
-    } catch (error) {
-        pageView.innerHTML = `<p>${error}</p>`;
+            lastLocation = urlInput.value;
+        });
     }
-}
+
+    return;
+};
 
 // General purpose functions
 function removeWinElement(element) {
@@ -81,7 +108,6 @@ window.removeWinElement = removeWinElement;
 window.dumbAhhProfile = dumbAhhProfile;
 window.gotoLocal = gotoLocal;
 
-loadHome();
 searchBtn.addEventListener('click', () => {
     urlGoerFromInput();
 })
@@ -91,6 +117,11 @@ urlInput.addEventListener('keydown', (e) => {
         urlGoerFromInput();
         urlInput.blur();
     }
+});
+
+// When the browser moves in history
+window.addEventListener('popstate', () => {
+    urlGoerFromParam();
 });
 
 /*
@@ -103,4 +134,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 */
+
 urlInput.value = "home";
+urlGoerFromParam();
