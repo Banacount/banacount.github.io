@@ -20,6 +20,9 @@
 .mt-2 {
     margin-top: 2rem;
 }
+.ml-1 {
+    margin-left: 1rem;
+}
 .f-1 {
     font-size: 1rem;
 }
@@ -37,6 +40,9 @@
 }
 .g-05 {
     gap: 0.5rem;
+}
+.inline {
+    display: inline-block;
 }
 .flex-row {
     display: flex;
@@ -57,4 +63,7 @@
 }
 .bg-yellow {
     background-color: yellow;
+}
+.color-blue {
+    color: blue;
 }

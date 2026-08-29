@@ -88,7 +88,7 @@ function dumbAhhProfile() {
         profileImg.src = './ass/profile.png';
     } else {
         myName.innerHTML = "Johval";
-        profileImg.src = './ass/me.jpg';
+        profileImg.src = './ass/me2.jpg';
     }
 }
 function gotoLocal(location) {

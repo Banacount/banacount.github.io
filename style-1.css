@@ -2,7 +2,10 @@
 /* Load fonts */
 @font-face {
     font-family: 'tahoma';
-    src: url('./ass/windows-xp-tahoma.otf');
+    src: url('./ass/tahoma.ttf');
+}
+html {
+    font-size: 70%;
 }
 
 /* Variables */
@@ -115,16 +118,21 @@ button {
 }
 .smol-header {
     margin-top: 0.3rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
+}
+.part-1 {
+    gap: 1rem;
 }
 .part-2 {
     width: auto;
+    justify-content: center;
     padding-left: 3rem;
+    padding-bottom: 3rem;
 }
 .square-image {
     display: flex;
-    width: 7rem;
+    width: 20rem;
     aspect-ratio: 1 / 1;
     border: 5px outset var(--color-fg);
     background-color: transparent;
@@ -169,30 +177,29 @@ button {
     background-color: var(--color-bg-window);
 }
 
-.nav-contain {
-    width: 95%;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 .navbar {
     position: fixed;
     width: 100%;
     display: flex;
     gap: 0.3rem;
-    margin-top: 0.5rem;
+    margin-top: 3.8rem;
     flex-direction: row;
     justify-content: right;
-    padding-right: 1rem;
-    box-sizing: border-box;
+    justify-content: center;
+    box-sizing: border-box; 
 }
 .navbar button {
-    width: 5rem;
+    width: 8rem;
     height: 2rem;
     margin: 0;
-    font-size: 1.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 1.8rem;
+    font-size: 1.2rem;
+}
+.navbar button:hover {
+    color: blue;
 }
 
 .in-text-action {
@@ -229,8 +236,8 @@ button {
     gap: 2rem;
 }
 .project-card {
-    width: 15rem;
-    height: 28rem;
+    width: 20rem;
+    height: 40rem;
     display: flex;
     flex-direction: column;
     background-color: var(--color-fg);
@@ -257,7 +264,7 @@ button {
 }
 .project-card .card-title {
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 .project-card .card-desc {
     margin-top: 0.5rem;
@@ -274,15 +281,16 @@ button {
     display: inline-block;
     margin-top: 0.3rem;
     margin-left: 0.3rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 0.2rem;
     background-color: yellow;
+    border: 1px solid var(--color-txt);
 }
 .project-card .proj-link {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .project-card .proj-link a {
     font-size: 2rem;
@@ -305,7 +313,7 @@ button {
 }
 .socials-contain .social a {
     color: blue;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     padding: 1rem;
 }
 .socials-contain .social .social-img {
@@ -336,27 +344,47 @@ button {
     cursor: pointer;
 }
 
+#pageView {
+    justify-self: center;
+    max-width: 1040px;
+}
+
+.nav-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-contain {
+    width: 80%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+}
+.nav-contain p {
+    margin-right: 0.2rem;
+}
 #pageUrlInput {
-    width: 100%;
+    width: 80%;
+    flex: 1;
     font-size: 1.2rem;
     outline: none;
     border: 5px groove var(--color-bg);
     background-color: var(--color-fg);
     box-sizing: border-box;
 }
-#pageView {
-    justify-self: center;
-    max-width: 1040px;
-}
-
-.nav-contain p {
-    margin-right: 0.2rem;
-}
 .nav-contain button {
     font-size: 1.1rem;
-    width: 1.5rem;
-    height: 1.5rem;
 }
+#searchBtn {
+    width: 4rem;
+    height: 2.5rem;
+    margin-right: auto;
+    flex-shrink: 0;
+} 
+
 .page-view-contain {
     display: flex;
     flex-direction: column;
