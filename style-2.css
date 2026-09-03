@@ -1,0 +1,24 @@
+
+/* Aspect ratios */
+.as-by-1 {
+	aspect-ratio: 1 / 1;
+}
+.as-by-16-9 {
+	aspect-ratio: 16 / 9;
+}
+.as-by-9-16 {
+	aspect-ratio: 9 / 16;
+}
+.as-github-banner {
+	aspect-ratio: 427 / 100;
+}
+
+.art-h {
+	height: 20rem;
+}
+.max-w-art {
+	max-width: 100%;
+}
+.w-auto {
+	width: auto;
+}

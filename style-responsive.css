@@ -17,6 +17,12 @@
     .smol-header {
         font-size: 1.6rem;
     }
+    .as-github-banner {
+        margin-left: -1vw;
+    }
+    .art-h {
+        height: 15rem;
+    }
 }
 
 @media screen and (max-width: 560px) {
@@ -28,5 +34,11 @@
     }
     .nav-contain {
         width: 95%;
+    }
+    .max-w-art {
+        max-width: 90vw;
+    }
+    .art-h {
+        height: 10rem;
     }
 }

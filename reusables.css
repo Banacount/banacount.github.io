@@ -11,6 +11,9 @@
 .w-100 {
     width: 100%;
 }
+.h-100 {
+    height: 100%;
+}
 .w-80 {
     width: 80%;
 }
@@ -19,6 +22,9 @@
 }
 .mt-2 {
     margin-top: 2rem;
+}
+.mb-1 {
+    margin-bottom: 1rem;
 }
 .ml-1 {
     margin-left: 1rem;
@@ -43,6 +49,9 @@
 }
 .inline {
     display: inline-block;
+}
+.inline-flex {
+    display: inline-flex;
 }
 .flex-row {
     display: flex;
